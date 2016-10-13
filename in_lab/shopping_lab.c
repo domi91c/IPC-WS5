@@ -2,8 +2,46 @@
 
 
 
-int main(){
-	return 0;
+struct Item {
+    int sku_;
+    float price_;
+    int quantity_;
+};
+
+int main() {
+
+    const int MAX_ITEMS = 10;
+    struct Item item[MAX_ITEMS];
+    int size = 0;
+    int input;
+
+    printf("Welcome to the Shop\n");
+    printf("======================\n");
+
+    do {
+        printf("Please select from the following options:\n");
+        printf("1) Display the inventory.\n");
+        printf("2) Add to shop.\n");
+        printf("0) Exit.\n");
+        scanf("%i", &input);
+        if (input < 0 || input > 2) {
+            printf("Invalid input, try again: Please select from the following options:\n");
+        }
+    } while (input < 0 || input > 2);
+
+    switch (input) {
+        case 1:
+            printf("Display\n");
+            break;
+        case 2:
+            printf("Add\n");
+            break;
+        case 0:
+            printf("Exit\n");
+            break;
+    }
+
+    return 0;
 }
 
 /*
